@@ -9,13 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
      <!-- Site Metas -->
-    <title>SmartEDU - Education Responsive HTML5 Template</title>
+    <title>3-umumiy o'rta talim maktabi</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static 'images/gerb.jpg' %}" type="image/x-icon" />
     <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
 
     <!-- Bootstrap CSS -->
@@ -114,6 +114,14 @@
 		</div>
 	  </div>
 	</div>
+    <!-- LOADER -->
+	<div id="preloader">
+		<div class="loader-container">
+			<div class="progress-br float shadow">
+				<div class="progress__item"></div>
+			</div>
+		</div>
+	</div>
 
 {% block content %}
 {% endblock %}
@@ -148,7 +156,7 @@
                         </div>
                         <ul class="footer-links">
                             <li><a href="#">Home</a></li>
-                            <li><a href="#">Blog</a></li>
+                            <li><a href="{% url 'blog' %}>Blog</a></li>
                             <li><a href="#">Pricing</a></li>
 							<li><a href="#">About</a></li>
 							<li><a href="#">Contact</a></li>
