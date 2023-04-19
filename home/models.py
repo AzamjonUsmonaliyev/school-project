@@ -10,6 +10,10 @@ class About(models.Model):
     text = models.TextField()
     createdata = models.DateTimeField(auto_now_add=True)
 
+class Card(models.Model):
+    image = models.ImageField(upload_to='about/image/cart/')
+    title =models.CharField(max_length=100)
+    text = models.TextField()
 class History(models.Model):
     year = models.PositiveSmallIntegerField()
     text =models.TextField()
