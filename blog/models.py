@@ -24,4 +24,11 @@ class Post(models.Model):
     teacher = models.ForeignKey(Teacher,on_delete=models.CASCADE)
     opinion = models.TextField(verbose_name='Teacher opinion')
 
-
+class Cantact(models.Model):
+    firstname = models.CharField(max_length=150)
+    lastname = models.CharField(max_length=150)
+    email = models.EmailField(blank=True,null=True)
+    phone = models.CharField(max_length=30)
+    docs = models.TextField()
+    x_loc = models.FloatField()
+    y_loc = models.FloatField()
