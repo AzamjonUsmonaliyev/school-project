@@ -5,6 +5,6 @@ def home(request):
     main_image = MainImage.objects.all()
     about = About.objects.all()
 
-    return render(request,'index.html')
+    return render(request,'contact.html')
 def blog(request):
     return render(request,'blog.html')
