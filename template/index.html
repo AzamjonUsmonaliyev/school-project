@@ -24,7 +24,7 @@
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog </a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="{% url 'blog' %}">Blog </a>
+								<a class="dropdown-item" href="#">Blog </a>
 								<a class="dropdown-item" href="blog-single.html">Blog single </a>
 							</div>
 						</li>
@@ -127,53 +127,53 @@ This school will provide effective education for your children.  In this school,
             <div class="section-title row text-center">
                 <div class="col-md-8 offset-md-2">
                     <h3>About</h3>
-                    <p class="lead">Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem!</p>
+                    <p class="lead">We have been running this school for more than 70 years and we have achieved many results in the meantime</p>
                 </div>
             </div><!-- end title -->
         
             <div class="row align-items-center">
+				{% for card in cards %}
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <div class="message-box">
-                        <h4>2018 BEST SmartEDU education school</h4>
-                        <h2>Welcome to SmartEDU education school</h2>
-                        <p>Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>
-
-                        <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis montes, nascetur ridiculus mus. Sed vitae rutrum neque. </p>
+                        <h4>2018 BEST school</h4>
+                        <h2>{{ card.title }}</h2>
+                        <p>{{card.text}}</p>
 
                         <a href="#" class="hover-btn-new orange"><span>Learn More</span></a>
                     </div><!-- end messagebox -->
                 </div><!-- end col -->
-				
 				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <div class="post-media wow fadeIn">
-                        <img src="{% static 'images/about_02.jpg' %}" alt="" class="img-fluid img-rounded">
-                    </div><!-- end media -->
-                </div><!-- end col -->
-			</div>
-			<div class="row align-items-center">
-				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <div class="post-media wow fadeIn">
-                        <img src="images/about_03.jpg" alt="" class="img-fluid img-rounded">
-                    </div><!-- end media -->
-                </div><!-- end col -->
+                    		<div class="post-media wow fadeIn">
+                        		<img src="{{ card.image.url }}" alt="" class="img-fluid img-rounded">
+                    		</div><!-- end media -->
+						</div><!-- end col -->
+				{% endfor %}
+				{% for card in cards1 %}
 
+				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    		<div class="post-media wow fadeIn">
+                        		<img src="{{ card.image.url }}" alt="" class="img-fluid img-rounded">
+                    		</div><!-- end media -->
+						</div><!-- end col -->
 				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <div class="message-box">
-                        <h2>The standard Lorem Ipsum passage, used since the 1500s</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                        <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum.</p>
+                        <h4>2018 BEST school</h4>
+                        <h2>{{ card.title }}</h2>
+                        <p>{{card.text}}</p>
 
                         <a href="#" class="hover-btn-new orange"><span>Learn More</span></a>
                     </div><!-- end messagebox -->
                 </div><!-- end col -->
+				{% endfor %}
 
-            </div><!-- end row -->
+			</div>
+
         </div><!-- end container -->
     </div><!-- end section -->
 
     <section class="section lb page-section">
 		<div class="container">
+
 			 <div class="section-title row text-center">
                 <div class="col-md-8 offset-md-2">
                     <h3>Our history</h3>
@@ -183,62 +183,19 @@ This school will provide effective education for your children.  In this school,
 			<div class="timeline">
 				<div class="timeline__wrap">
 					<div class="timeline__items">
+
+
+						{% for a in history %}
 						<div class="timeline__item">
-							<div class="timeline__content img-bg-01">
-								<h2>2018</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem
-									ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							<div class="timeline__content " style="background: url({{a.image.url}}) no-repeat center;background-size: cover">
+
+								<h2>{{ a.year }}</h2>
+								<p>{{ a.text }}</p>
 							</div>
 						</div>
-						<div class="timeline__item">
-							<div class="timeline__content img-bg-02">
-								<h2>2015</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem
-									ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="timeline__item">
-							<div class="timeline__content img-bg-03">
-								<h2>2014</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem
-									ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="timeline__item">
-							<div class="timeline__content img-bg-04">
-								<h2>2012</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem
-									ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="timeline__item">
-							<div class="timeline__content img-bg-01">
-								<h2>2010</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem
-									ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="timeline__item">
-							<div class="timeline__content img-bg-02">
-								<h2>2007</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem
-									ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="timeline__item">
-							<div class="timeline__content img-bg-03">
-								<h2>2004</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem
-									ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="timeline__item">
-							<div class="timeline__content img-bg-04">
-								<h2>2002</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem
-									ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
+
+						{% endfor %}
+
 					</div>
 				</div>
 			</div>
@@ -250,19 +207,19 @@ This school will provide effective education for your children.  In this school,
 			<div class="row text-left stat-wrap">
 				<div class="col-md-4 col-sm-4 col-xs-12">
 					<span data-scroll class="global-radius icon_wrap effect-1 alignleft"><i class="flaticon-study"></i></span>
-					<p class="stat_count">12000</p>
+					<p class="stat_count">{{Student.student}}</p>
 					<h3>Students</h3>
 				</div><!-- end col -->
 
 				<div class="col-md-4 col-sm-4 col-xs-12">
 					<span data-scroll class="global-radius icon_wrap effect-1 alignleft"><i class="flaticon-online"></i></span>
-					<p class="stat_count">240</p>
+					<p class="stat_count">{{Student.course}}</p>
 					<h3>Courses</h3>
 				</div><!-- end col -->
 
 				<div class="col-md-4 col-sm-4 col-xs-12">
 					<span data-scroll class="global-radius icon_wrap effect-1 alignleft"><i class="flaticon-years"></i></span>
-					<p class="stat_count">55</p>
+					<p class="stat_count">{{Student.year}}</p>
 					<h3>Years Completed</h3>
 				</div><!-- end col -->
 			</div><!-- end row -->
