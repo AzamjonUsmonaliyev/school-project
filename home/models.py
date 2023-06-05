@@ -25,19 +25,6 @@ class Student(models.Model):
     course = models.IntegerField(default=240)
     year = models.PositiveSmallIntegerField(default=55)
 
-class Plan(models.Model):
-    CHOICE  =(
-        ('PRE MONTH','PRE MONTH'),
-        ('YEAR','YEAR'),
-    )
-    price = models.PositiveIntegerField(default=30)
-    period =models.CharField(choices=CHOICE,max_length=30)
-    emailaddres =models.PositiveSmallIntegerField(default=150)
-    storage = models.PositiveSmallIntegerField(default=65)
-    database =models.PositiveSmallIntegerField(default=45)
-    domain = models.PositiveSmallIntegerField(default=27)
-    support =models.CharField(max_length=30)
-
 class Testimonials(models.Model):
     fullname=models.CharField(max_length=150)
     image = models.ImageField(upload_to='about/image/tester')
