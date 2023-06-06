@@ -3,14 +3,21 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.name
+
 
 class Teacher(models.Model):
     fullname = models.CharField(max_length=200)
+    image = models.FileField(upload_to='teacher/image')
     profession = models.CharField(max_length=150)
     facebook = models.URLField(blank=True, null=True)
     duo = models.URLField(blank=True,null=True)
     linkedin = models.URLField(blank=True,null=True)
     instagram = models.URLField(blank=True,null=True)
+
+    def __str__(self):
+        return self.fullname
 
 
 class Post(models.Model):
@@ -24,6 +31,9 @@ class Post(models.Model):
     teacher = models.ForeignKey(Teacher,on_delete=models.CASCADE)
     opinion = models.TextField(verbose_name='Teacher opinion')
 
+    def __str__(self):
+        return self.title
+
 class Cantact(models.Model):
     firstname = models.CharField(max_length=150)
     lastname = models.CharField(max_length=150)
@@ -32,6 +42,9 @@ class Cantact(models.Model):
     docs = models.TextField()
     x_loc = models.FloatField()
     y_loc = models.FloatField()
+
+    def __str__(self):
+        return self.firstname
 
 class Course(models.Model):
     image = models.FileField(upload_to="course/image")

@@ -124,6 +124,19 @@
 		</div>
 	</div>
 
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index.html">
+					<img src="{% static 'images/logo.png' %}" style="height: 80px" alt="" />
+                    <p style="display: inline;color: black"> SCHOOL <img src="{% static 'images/3.png' %} " style="width: 30px"></p>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+				</button>
+
 {% block content %}
 {% endblock %}
 
@@ -158,7 +171,7 @@
                         <ul class="footer-links">
                             <li><a href="#">Home</a></li>
                             <li><a href="#">Blog</a></li>
-							<li><a href="#">About</a></li>
+							<li><a href="/about/">About</a></li>
 							<li><a href="#">Contact</a></li>
                         </ul><!-- end links -->
                     </div><!-- end clearfix -->
@@ -200,7 +213,12 @@
     <!-- ALL PLUGINS -->
     <script src="{% static 'js/custom.js' %}"></script>
 	<script src="{% static 'js/timeline.min.js' %}"></script>
-
+<script>
+window.replainSettings = { id: 'e5c14953-78dd-4c6c-936c-8fe2fc5faf20' };
+(function(u){var s=document.createElement('script');s.async=true;s.src=u;
+var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
+})('https://widget.replain.cc/dist/client.js');
+</script>
 	<script>
 		timeline(document.querySelectorAll('.timeline'), {
 			forceVerticalMode: 700,

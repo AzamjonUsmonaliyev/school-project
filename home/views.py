@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import MainImage,About,Card,History,Student ,Testimonials,Partner
+from blog.models import Course,Teacher
 
 def home(request):
     main_image = MainImage.objects.all()
@@ -25,4 +26,33 @@ def home(request):
 
 
 def about(request):
-    return render(request,'about.html')
+    data={
+        'about':About.objects.all(),
+        'cards': Card.objects.all()[::2],
+        'cards1': Card.objects.all()[1::2],
+        'testimoials': Testimonials.objects.all(),
+        'partner': Partner.objects.all(),
+    }
+    return render(request,'about.html',data)
+
+
+def course(request):
+
+    data={
+        'course':Course.objects.all(),
+        'star1':[1,2,3,4,5],
+        'star2':[1,2,3,4],
+        'partner':Partner.objects.all(),
+    }
+    return render(request ,'course.html',data)
+
+def contact(request):
+    return render(request,'contact.html',{'partner':Partner.objects.all()})
+
+def teacher(request):
+    data={
+        'teachers': Teacher.objects.all(),
+        'testimoials': Testimonials.objects.all(),
+        'partner': Partner.objects.all(),
+    }
+    return render(request,'teachers.html',data)
